@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" >
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" >
     <title>My Recipes</title>
   </head>
   <body>
-    <header class="header">
-        <h1>My Recipes</h1>
-        <aside><nav><a href="submit.html">Submit New Recipe</a></nav></aside>
-            <ul>
-                <li><a href="#breakfast-title">Breakfast</a></li>
-                <li>Lunch</li>
-                <li>Dinner</li>
-                <li>Dessert</li>
-            </ul>
-    </header>
-    <h2 id="breakfast-title">Breakfast</h2>
-    <h2 id="lunch-title">Lunch</h2>
-    <h2 id="dinner-title">Dinner</h2>
-    <h2 id="dessert-title">Dessert</h2>
-    <script src="./assets/js/script.js"></script>
+    <nav>
+      <div class="nav-wrapper salmon">
+        <a href="#" class="brand-logo">Logo</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#Lunch">Lunch</a></li>
+          <li><a href="#Dinner">Dinner</a></li>
+          <li><a href="#Dessert">Dessert</a></li>
+          <li><a href="#Breakfast">Breakfast</a></li>
+        </ul>
+      </div>
+    </nav>
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="#Lunch">Lunch</a></li>
+      <li><a href="#Dinner">Dinner</a></li>
+      <li><a href="#Dessert">Dessert</a></li>
+      <li><a href="#Breakfast">Breakfast</a></li>
+    </ul>
+    <div class="container">
+      <h1 class="center-align">Welcome to Recipes</h1>
+      <p>Idk what we putting here.</p>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.sidenav').sidenav();
+      });
+    </script>
   </body>
 </html>
