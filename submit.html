@@ -10,39 +10,47 @@
   </head>
   <body>
     <header class="header">
-        <h1>New Recipe</h1>
-        <aside><nav><a href="index.html">My Recipes</a></nav></aside>
+      <h1>New Recipe</h1>
+      <aside>
+        <nav><a href="index.html">My Recipes</a></nav>
+      </aside>
     </header>
-    <div id="div-1">
-    </div>
-    <div id="div-2">
-    </div>
-    <div id="div-3">
-      <div class="container">
-        <h4 class="center-align">Ingredient Tracker</h4>
-    
-        
-        <div class="row">
-          <form id="ingredient-form" class="col s12">
-            <div class="input-field col s9">
-              <input type="text" id="ingredient-input" placeholder="Enter an ingredient" required>
-            </div>
-            <div class="input-field col s3">
-              <button class="btn waves-effect waves-light" type="submit">Add</button>
-            </div>
-          </form>
-        </div>
-    
-        
-        <ul id="ingredient-list" class="collection"></ul>
-    
+    <div class="recipe-form">
+      <div id="div-1">
       </div>
-    </div>
-    <div id="div-4">
-    </div>
-    <div id="div-5">
-    </div>
-    <div id="div-6">
+      <div id="div-2">
+      </div>
+      <div id="div-3">
+        <div class="container">
+          <h4 class="center-align">Ingredient Tracker</h4>
+          <div class="row">
+            <form id="ingredient-form" class="col s12">
+              <div class="input-field col s9">
+                <input type="text" id="ingredient-input" placeholder="Enter an ingredient" required>
+              </div>
+              <div class="input-field col s3">
+                <button class="btn waves-effect waves-light" type="submit">Add</button>
+              </div>
+            </form>
+          </div>
+          <ul id="ingredient-list" class="collection"></ul>
+        </div>
+      </div>
+      <div id="div-4" class="recipe-image-div">
+        <img class="responsive-img recipe-image" id="recipe-image" src="https://cdn.pixabay.com/photo/2017/02/16/02/54/coming-soon-2070393_960_720.jpg" alt="Image will appear here">
+        <input type="text" id="imageUrl" placeholder="Paste image URL here">
+        <button type="submit" onclick="saveImageUrl()">Save image</button>
+      </div>
+      <div id="div-5">
+          <h4 class="center-align">Directions</h4>
+            <form id="directions-form">
+              <input type="text" id="directions-input" placeholder="Enter a direction" required>
+              <button class="btn waves-effect waves-light" type="submit" id="directions-submit" >Add</button>
+            </form>
+          <ol id="directions-list" class="collection"></ol>
+      </div>
+      <div id="div-6">
+      </div>
     </div>
     <script src="./assets/js/script.js"></script>
   </body>
