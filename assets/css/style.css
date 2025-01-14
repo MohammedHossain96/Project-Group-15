@@ -1,3 +1,24 @@
 .header {
     background-color: salmon;
 }
+
+
+.recipe-form {
+    display: flex;
+    justify-content: space-between;
+    min-height: 90%;
+    flex-direction: column;
+    margin: 5%;
+}
+
+/* Recipe Image */
+.recipe-image-div {
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+}
+
+.recipe-image {
+    width: 30%;
+    margin: 0 auto;
+}
