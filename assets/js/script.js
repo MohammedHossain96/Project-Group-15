@@ -141,10 +141,11 @@ document.addEventListener('DOMContentLoaded', function () {});
     event.preventDefault();
 
     const ingredients = ingredientList.getElementsByTagName('li').length;
+    const directions = directionsList.getElementsByTagName('li').length;
 
-    if (ingredients === 0) {
+    if (ingredients === 0 || directions === 0) {
       const errorEl = document.querySelector('#error');
-      errorEl.textContent = 'Please add at least one ingredient';
+      errorEl.textContent = 'Please add at least one ingredient and one direction.';
 
       setTimeout(function () {
         errorEl.textContent = '';
@@ -154,13 +155,13 @@ document.addEventListener('DOMContentLoaded', function () {});
     }
 
     const formData = {
-        ingredientList: Array.from(ingredientList.getElementsByTagName('li')).map(li => li.textContent.trim())
-      };
-  
-      storeLocalStorage(formData);
-      redirectPage('index.html');
+      ingredients: Array.from(ingredientList.getElementsByTagName('li')).map(li => li.textContent.trim()),
+      directions: Array.from(directionsList.getElementsByTagName('li')).map(li => li.textContent.trim())
     };
-  
-    formEl.addEventListener('submit', handleFormSubmit);
-  
+
+    localStorage.setItem('formData', JSON.stringify(formData));
+    window.location.href = 'index.html';
+  };
+
+  formEl.addEventListener('submit', handleFormSubmit);
 
