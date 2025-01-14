@@ -36,7 +36,21 @@ document.addEventListener('DOMContentLoaded', function () {});
   });
 
   // end of ingredients js
+// start of discription
+const toggleButton = document.getElementById('toggle-description');
+const showMoreText = document.getElementById('show-more');
+// Add click event listener to toggle the description
+toggleButton.addEventListener('click', () => {
+  if (showMoreText.style.display === 'none' || showMoreText.style.display === '') {
+    showMoreText.style.display = 'inline';
+    toggleButton.textContent = 'Show Less';
+  } else {
+    showMoreText.style.display = 'none';
+    toggleButton.textContent = 'Show More';
+  }
+});
 
+//end of discription
   // Image upload js
 
   
