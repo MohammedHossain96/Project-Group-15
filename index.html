@@ -1,12 +1,23 @@
+<!-----------------------------------------------------------------index.html---------------------------------------------------->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <meta http-equiv="X-UA-Compatible" content="ie=edge" >
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css" >
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
     <title>My Recipes</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -14,33 +25,90 @@
         <a href="#" class="brand-logo">Logo</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="#Lunch">Lunch</a></li>
-          <li><a href="#Dinner">Dinner</a></li>
-          <li><a href="#Dessert">Dessert</a></li>
-          <li><a href="#Breakfast">Breakfast</a></li>
+          <li><a href="#breakfast-section">Breakfast</a></li>
+          <li><a href="#lunch-section">Lunch</a></li>
+          <li><a href="#dinner-section">Dinner</a></li>
+          <li><a href="#dessert-section">Dessert</a></li>
         </ul>
       </div>
     </nav>
     <ul class="sidenav" id="mobile-demo">
-      <li><a href="#Lunch">Lunch</a></li>
-      <li><a href="#Dinner">Dinner</a></li>
-      <li><a href="#Dessert">Dessert</a></li>
-      <li><a href="#Breakfast">Breakfast</a></li>
+      <li><a href="#breakfast-section">Breakfast</a></li>
+      <li><a href="#lunch-section">Lunch</a></li>
+      <li><a href="#dinner-section">Dinner</a></li>
+      <li><a href="#dessert-section">Dessert</a></li>
     </ul>
+  
     <div class="container">
       <h1 class="center-align">Welcome to Recipes</h1>
-      <p>Idk what we putting here.</p>
+      
+      <div class="row">
+      
+        <div id="breakfast-section" class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="./assets/images/breakfast.jpg" alt="Breakfast">
+              <span class="card-title">Breakfast</span>
+            </div>
+            <div class="card-content">
+              <p>breakfast recipes.</p>
+            </div>
+            <div class="card-action">
+              <a href="#Breakfast">View Breakfast Recipes</a>
+            </div>
+          </div>
+        </div>
+
+      
+        <div id="lunch-section" class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="./assets/images/lunch.jpg" alt="Lunch">
+              <span class="card-title">Lunch</span>
+            </div>
+            <div class="card-content">
+              <p>lunch recipes.</p>
+            </div>
+            <div class="card-action">
+              <a href="#Lunch">View Lunch Recipes</a>
+            </div>
+          </div>
+        </div>
+
+       
+        <div id="dinner-section" class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="./assets/images/dinner.jpg" alt="Dinner">
+              <span class="card-title">Dinner</span>
+            </div>
+            <div class="card-content">
+              <p>dinner recipes.</p>
+            </div>
+            <div class="card-action">
+              <a href="#Dinner">View Dinner Recipes</a>
+            </div>
+          </div>
+        </div>
+
+    
+        <div id="dessert-section" class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="./assets/images/dessert.jpg" alt="Dessert">
+              <span class="card-title">Dessert</span>
+            </div>
+            <div class="card-content">
+              <p>dessert recipes.</p>
+            </div>
+            <div class="card-action">
+              <a href="#Dessert">View Dessert Recipes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
     </div>
-    <div class="container">
-      <h4 class="center-align">Recipe Ingredients</h4>
-      <ul id="display-ingredients" class="collection"></ul>
-  
-      <h4 class="center-align">Cooking Directions</h4>
-      <ol id="display-directions" class="collection"></ol>
-    </div>
-    <script src="./assets/js/indexfile.js"></script>
-  </body>
-  </html>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
@@ -50,3 +118,4 @@
     </script>
   </body>
 </html>
+<!-----------------------------------------------------------------index.html---------------------------------------------------->
