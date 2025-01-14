@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {});
   // Ingredient form elements
   const ingredientForm = document.getElementById('ingredient-form');
   const ingredientInput = document.getElementById('ingredient-input');
@@ -38,6 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // end of ingredients js
 
   // Image upload js
+
+  
 
   function saveImageUrl() {
     const imageUrl = document.getElementById('imageUrl').value;
@@ -160,5 +162,5 @@ document.addEventListener('DOMContentLoaded', function () {
     };
   
     formEl.addEventListener('submit', handleFormSubmit);
-  });
+  
 
