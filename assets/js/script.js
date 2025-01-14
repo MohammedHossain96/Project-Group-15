@@ -143,6 +143,8 @@ document.addEventListener('DOMContentLoaded', function () {});
     const ingredients = ingredientList.getElementsByTagName('li').length;
     const directions = directionsList.getElementsByTagName('li').length;
 
+
+//submit button
     if (ingredients === 0 || directions === 0) {
       const errorEl = document.querySelector('#error');
       errorEl.textContent = 'Please add at least one ingredient and one direction.';
@@ -156,7 +158,8 @@ document.addEventListener('DOMContentLoaded', function () {});
 
     const formData = {
       ingredients: Array.from(ingredientList.getElementsByTagName('li')).map(li => li.textContent.trim()),
-      directions: Array.from(directionsList.getElementsByTagName('li')).map(li => li.textContent.trim())
+      directions: Array.from(directionsList.getElementsByTagName('li')).map(li => li.textContent.trim()), 
+      imageURL: localStorage.getItem('savedImageUrl'),
     };
 
     localStorage.setItem('formData', JSON.stringify(formData));
