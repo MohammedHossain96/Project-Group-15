@@ -23,6 +23,29 @@
     margin: 0 auto;
 }
 
+.icon-block {
+    padding: 0 15px;
+  }
+  .icon-block .material-icons {
+    font-size: inherit;
+  }
+  .card {
+    height: 400px;
+    margin: 20px;
+  }
+  .card .card-image {
+    height: 250px;
+    overflow: hidden;
+  }
+  .card .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card .card-content {
+    height: 80px;
+  };
+
 /* Classes in Index.html */
 
 .recipe-container {
@@ -69,4 +92,3 @@
     width: 100%;
     margin-top: 1rem;
 }
-
