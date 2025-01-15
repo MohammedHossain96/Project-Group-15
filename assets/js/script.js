@@ -171,6 +171,7 @@ toggleButton.addEventListener('click', () => {
     const formData = {
       ingredients: Array.from(ingredientList.getElementsByTagName('li')).map(li => li.textContent.trim()),
       directions: Array.from(directionsList.getElementsByTagName('li')).map(li => li.textContent.trim())
+      discription: document.getElementById('discription').value.trim(),
     };
 
     localStorage.setItem('formData', JSON.stringify(formData));
