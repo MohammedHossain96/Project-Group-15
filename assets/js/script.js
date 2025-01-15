@@ -36,21 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {});
   });
 
   // end of ingredients js
-// start of discription
-const toggleButton = document.getElementById('toggle-description');
-const showMoreText = document.getElementById('show-more');
-// Add click event listener to toggle the description
-toggleButton.addEventListener('click', () => {
-  if (showMoreText.style.display === 'none' || showMoreText.style.display === '') {
-    showMoreText.style.display = 'inline';
-    toggleButton.textContent = 'Show Less';
-  } else {
-    showMoreText.style.display = 'none';
-    toggleButton.textContent = 'Show More';
-  }
-});
 
-//end of discription
   // Image upload js
 
   
@@ -156,7 +142,7 @@ toggleButton.addEventListener('click', () => {
 
     const formData = {
       ingredients: Array.from(ingredientList.getElementsByTagName('li')).map(li => li.textContent.trim()),
-      directions: Array.from(directionsList.getElementsByTagName('li')).map(li => li.textContent.trim())
+      directions: Array.from(directionsList.getElementsByTagName('li')).map(li => li.textContent.trim()),
       discription: document.getElementById('discription').value.trim(),
       imageURL: localStorage.getItem('imageURL'),
     };
@@ -165,5 +151,17 @@ toggleButton.addEventListener('click', () => {
     //localStorage.setItem('formData', JSON.stringify(formData));
     window.location.href = 'index.html';
   };
+
+  // Store new Recipe to complete recipe array
+  let storeLocalStorage = function (formData) {
+    const existingDataString = localStorage.getItem('allStoredRecipeDataString');
+    const existingData = existingDataString ? JSON.parse(existingDataString) : [];
+    // Add a new recipe into the array
+    existingData.push(formData);
+    // Convert it to a string
+    const allStoredRecipeDataString = JSON.stringify(existingData);
+    localStorage.setItem('allStoredRecipeDataString', allStoredRecipeDataString);
+  } 
+
 
   formEl.addEventListener('submit', handleFormSubmit);

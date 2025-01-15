@@ -1,13 +1,3 @@
-// Store new Recipe to complete recipe array
-  let storeLocalStorage = function (formData) {
-    const existingDataString = localStorage.getItem('allStoredRecipeDataString');
-    const existingData = existingDataString ? JSON.parse(existingDataString) : [];
-    // Add a new recipe into the array
-    existingData.push(formData);
-    // Convert it to a string
-    const allStoredRecipeDataString = JSON.stringify(existingData);
-    localStorage.setItem('allStoredRecipeDataString', allStoredRecipeDataString);
-  } 
 
 // Read complete recipe array 
   let readLocalStorage = function () {
@@ -51,7 +41,7 @@ let createRecipe = function (recipe) {
   recipeServing.textContent = `Serving size: ${recipe.servingSize || 'N/A'} people`;
   recipeTime.textContent = `${recipe.time || 'N/A'} minutes`;
   recipeType.textContent = recipe.type || "Unknown Type";
-  recipeDescription.textContent = recipe.description || "No description provided.";
+  recipeDescription.textContent = recipe.discription || "No description provided.";
   recipeImage.setAttribute('src', `${recipe.imageURL}`);
   recipeImage.setAttribute('alt', recipe.title || "Recipe Image");
   ingredientsTitle.textContent = 'Ingredients';
