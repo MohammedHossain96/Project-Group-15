@@ -22,3 +22,51 @@
     width: 30%;
     margin: 0 auto;
 }
+
+/* Classes in Index.html */
+
+.recipe-container {
+    border-top: solid;
+    margin: 5%;
+}
+.recipe.title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.recipe-serving {
+    font-size: 0.8rem;
+}
+.recipe-time {
+    font-size: 0.8rem;
+}
+.recipe-type {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.recipe-description {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+.ingredients-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+.ingredients-list {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+.directions-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+.directions-list {
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+.recipe-image {
+    width: 100%;
+    margin-top: 1rem;
+}
+
