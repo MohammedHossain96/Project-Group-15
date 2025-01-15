@@ -72,10 +72,7 @@ toggleButton.addEventListener('click', () => {
                 const imgElement = document.getElementById('recipe-image');
                 imgElement.src = savedImageUrl; // Set the URL as the image source
             }
-  }
-
-  // Load the image when the page is loaded
-  document.addEventListener('DOMContentLoaded', displayImage);
+          }
 
   // end of image upload js
 
@@ -131,19 +128,6 @@ toggleButton.addEventListener('click', () => {
     localStorage.setItem('directions', JSON.stringify(directions));
   }
 
-  // Load directions from localStorage
-  loadDirections = function() {
-    const directions = JSON.parse(localStorage.getItem('directions'));
-    if (directions) {
-      directions.forEach(function(direction) {
-        addDirection(direction);
-      });
-    }
-  }
-
-  // Load directions when the page is loaded
-  document.addEventListener('DOMContentLoaded', loadDirections);
-
 // end of directions js
 
 
@@ -157,6 +141,8 @@ toggleButton.addEventListener('click', () => {
     const ingredients = ingredientList.getElementsByTagName('li').length;
     const directions = directionsList.getElementsByTagName('li').length;
 
+
+//submit button
     if (ingredients === 0 || directions === 0) {
       const errorEl = document.querySelector('#error');
       errorEl.textContent = 'Please add at least one ingredient and one direction.';
@@ -172,11 +158,12 @@ toggleButton.addEventListener('click', () => {
       ingredients: Array.from(ingredientList.getElementsByTagName('li')).map(li => li.textContent.trim()),
       directions: Array.from(directionsList.getElementsByTagName('li')).map(li => li.textContent.trim())
       discription: document.getElementById('discription').value.trim(),
+      imageURL: localStorage.getItem('imageURL'),
     };
 
-    localStorage.setItem('formData', JSON.stringify(formData));
+    storeLocalStorage(formData);
+    //localStorage.setItem('formData', JSON.stringify(formData));
     window.location.href = 'index.html';
   };
 
   formEl.addEventListener('submit', handleFormSubmit);
-
