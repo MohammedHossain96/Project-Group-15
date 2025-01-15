@@ -9,6 +9,7 @@
     min-height: 90%;
     flex-direction: column;
     margin: 5%;
+    align-content: center;
 }
 
 /* Recipe Image */
