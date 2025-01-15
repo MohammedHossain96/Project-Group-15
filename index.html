@@ -1,4 +1,3 @@
-<!-----------------------------------------------------------------index.html---------------------------------------------------->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,9 +17,10 @@
     </style>
   </head>
   <body>
+    <header>
     <nav>
       <div class="nav-wrapper salmon">
-        <a href="#" class="brand-logo">Logo</a>
+        <a href="#" class="brand-logo">🍳</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
           <li><a href="submit.html">New Recipe</a></li>
@@ -32,11 +32,13 @@
       </div>
     </nav>
     <ul class="sidenav" id="mobile-demo">
+      <li><a href="submit.html">New Recipe</a></li>
       <li><a href="#breakfast-section">Breakfast</a></li>
       <li><a href="#lunch-section">Lunch</a></li>
       <li><a href="#dinner-section">Dinner</a></li>
       <li><a href="#dessert-section">Dessert</a></li>
     </ul>
+    </header>
       <h1 class="center-align">Welcome to Recipes</h1>
       <div class="row">
         <div id="breakfast-section" class="col s12 m6 l3">
@@ -46,7 +48,7 @@
               <span class="card-title">Breakfast</span>
             </div>
             <div class="card-content">
-              <p>breakfast recipes.</p>
+              <p id="breakfast-recipes">breakfast recipes.</p>
             </div>
             <div class="card-action">
               <a href="#Breakfast">View Breakfast Recipes</a>
@@ -60,7 +62,7 @@
               <span class="card-title">Lunch</span>
             </div>
             <div class="card-content">
-              <p>lunch recipes.</p>
+              <p id="lunch-recipes">lunch recipes.</p>
             </div>
             <div class="card-action">
               <a href="#Lunch">View Lunch Recipes</a>
@@ -74,7 +76,7 @@
               <span class="card-title">Dinner</span>
             </div>
             <div class="card-content">
-              <p>dinner recipes.</p>
+              <p id="dinner-recipes">dinner recipes.</p>
             </div>
             <div class="card-action">
               <a href="#Dinner">View Dinner Recipes</a>
@@ -88,7 +90,7 @@
               <span class="card-title">Dessert</span>
             </div>
             <div class="card-content">
-              <p>dessert recipes.</p>
+              <p id="dessert-recipes">dessert recipes.</p>
             </div>
             <div class="card-action">
               <a href="#Dessert">View Dessert Recipes</a>

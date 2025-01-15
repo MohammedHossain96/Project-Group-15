@@ -4,6 +4,8 @@
     <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <meta http-equiv="X-UA-Compatible" content="ie=edge" >
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" >
     <title>New Recipe</title>
@@ -11,14 +13,31 @@
   <body>
     <header class="header">
       <h1>New Recipe</h1>
-      <aside>
-        <nav><a href="index.html">My Recipes</a></nav>
-      </aside>
+      <nav>
+        <div class="nav-wrapper salmon">
+          <a href="#" class="brand-logo">🍳</a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="index.html">My Recipes</a></li>
+            <li><a href="index.html#breakfast-section">Breakfast</a></li>
+            <li><a href="index.html#lunch-section">Lunch</a></li>
+            <li><a href="index.html#dinner-section">Dinner</a></li>
+            <li><a href="index.html#dessert-section">Dessert</a></li>
+          </ul>
+        </div>
+      </nav>
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="index.html">My Recipes</a></li>
+        <li><a href="index.html#breakfast-section">Breakfast</a></li>
+        <li><a href="index.html#lunch-section">Lunch</a></li>
+        <li><a href="index.html#dinner-section">Dinner</a></li>
+        <li><a href="index.html#dessert-section">Dessert</a></li>
+      </ul>
     </header>
     <div class="recipe-form">
       <div id="div-1">
             <h2>Menu</h2>
-    <details>
+        <details>
         <summary>Choose an Item</summary>
         <ul>
             <li><a href="#">Breakfast</a></li>
@@ -26,7 +45,7 @@
             <li><a href="#">Dinner</a></li>
             <li><a href="#">Dessert</a></li>
         </ul>
-    </details>
+        </details>
       </div>
       <div id="div-2">
         <label for="discription">discription</label>
@@ -61,13 +80,20 @@
             </form>
           <ol id="directions-list" class="collection"></ol>
       </div>
-    <div id="div-6" class="input-field">
-      <form id="cooking-form" action="index.html" method="post">
-        <p id="error" class="red-text"></p>
-        <button type="submit" class="btn waves-effect waves-light">Submit</button>
-      </form>
+      <div id="div-6" class="input-field">
+        <form id="cooking-form" action="index.html" method="post">
+          <p id="error" class="red-text"></p>
+          <button type="submit" class="btn waves-effect waves-light">Submit</button>
+        </form>
+      </div>
     </div>
-  </div>
     <script src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.sidenav').sidenav();
+      });
+    </script>
   </body>
 </html>

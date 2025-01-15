@@ -8,18 +8,6 @@
 // Listening for the window to open, and then loading recipes on page
 document.addEventListener('DOMContentLoaded', function () {
 
-let renderRecipeList = function () {
-    let allRecipes = readLocalStorage();
-    if (allRecipes.length > 0) {
-        for (let i = 0; i < allRecipes.length; i++) {
-            createRecipe(allRecipes[i]);
-        }
-    }
-    else {
-        noPosts();
-    }
-}
-
 // Creating new recipes
 let createRecipe = function (recipe) {
 
@@ -60,13 +48,34 @@ let createRecipe = function (recipe) {
   directionsTitle.className = 'directions-title';
   directionsList.className = 'directions-list';
 
+  // Target Recipe type headers
+  const breakfastRecipes = document.getElementById('breakfast-recipes');
+  const lunchRecipes = document.getElementById('lunch-recipes');
+  const dinnerRecipes = document.getElementById('dinner-recipes');
+  const dessertRecipes = document.getElementById('dessert-recipes');
+
   // Append elements to index.html
-  const recipeContainer = document.getElementById('all-recipes-container');
-  if (!recipeContainer) {
-    console.error("Recipe container element not found!");
+  if (recipe.type === 'Breakfast') {
+    breakfastRecipes.appendChild(recipeDiv);
+  }
+  else if (recipe.type === 'Lunch') {
+    lunchRecipes.appendChild(recipeDiv);
+  }
+  else if (recipe.type === 'Dinner') {
+    dinnerRecipes.appendChild(recipeDiv);
+  }
+  else if (recipe.type === 'Dessert') {
+    dessertRecipes.appendChild(recipeDiv);
+  }
+  else if (recipe.type !== 'All') {
+    const recipeContainer = document.getElementById('all-recipes-container');
+    recipeContainer.appendChild(recipeDiv);
+  }
+  else {
+    console.error("Recipe type not found!");
     return;
   }
-  recipeContainer.appendChild(recipeDiv);
+
   recipeDiv.appendChild(recipeTitle);
   recipeDiv.appendChild(recipeServing);
   recipeDiv.appendChild(recipeTime);
@@ -106,6 +115,23 @@ let createRecipe = function (recipe) {
     let noPostsEl = document.createElement('h3');
     noPostsEl.textContent = 'No Recipes posted yet...';
     recipeContainer.appendChild(noPostsEl);
+  }
+
+  let renderRecipeList = function () {
+    let allRecipes = readLocalStorage();
+    if (allRecipes.length > 0) {
+        for (let i = 0; i < allRecipes.length; i++) {
+            createRecipe(allRecipes[i]);
+        }
+    }
+    else {
+        noPosts();
+    }
 }
+
   renderRecipeList();
   });
+
+
+
+
