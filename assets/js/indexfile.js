@@ -89,16 +89,19 @@ let createRecipe = function (recipe) {
   }
 
 // Append Ingredients
+  recipeDiv.appendChild(ingredientsTitle);
   recipeDiv.appendChild(ingredientsList);
   if (Array.isArray(recipe.ingredients)) {
     recipe.ingredients.forEach(function (ingredient) {
       const li = document.createElement('li');
       li.textContent = ingredient;
+      li.setAttribute('style','list-style-type: circle; margin-left: 40px;');
       ingredientsList.appendChild(li);
     });
   }
 
   // Append Directions
+  recipeDiv.appendChild(directionsTitle);
   recipeDiv.appendChild(directionsList);
   if (Array.isArray(recipe.directions)) {
     recipe.directions.forEach(function (direction) {

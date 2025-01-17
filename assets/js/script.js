@@ -120,6 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {});
   // Cooking instructions form elements
   const formEl = document.querySelector('#cooking-form');
 
+  //submit button
   // Handle cooking instructions form submission
   const handleFormSubmit = function (event) {
     event.preventDefault();
@@ -127,18 +128,41 @@ document.addEventListener('DOMContentLoaded', function () {});
     const ingredients = ingredientList.getElementsByTagName('li').length;
     const directions = directionsList.getElementsByTagName('li').length;
 
+    // error modal
+    const modal = document.getElementById('errorModal');
+    const modalMessage = document.getElementById('modalMessage');
 
-//submit button
+    if (ingredients === 0 || directions === 0) {
+      // Display the modal with an error message
+      modalMessage.textContent = 'Error: Please add at least one ingredient and one direction.';
+      modal.style.display = 'flex'; // Show the modal
+      return; // Exit the function to prevent further execution
+    }
+
+    /*  old error message
     if (ingredients === 0 || directions === 0) {
       const errorEl = document.querySelector('#error');
       errorEl.textContent = 'Please add at least one ingredient and one direction.';
-
       setTimeout(function () {
-        errorEl.textContent = '';
+      errorEl.textContent = '';
       }, 4000);
 
       return;
-    }
+    } */
+
+    // Remove trailing delete from ingredients list
+    let ingredientsArray = Array.from(ingredientList.getElementsByTagName('li')).map(li => {
+      let parts = li.textContent.trim().split(' ');
+      parts.pop();
+      return parts.join(' ');
+    });
+
+    // Remove trailing delete from directions list
+    let directionsArray = Array.from(directionsList.getElementsByTagName('li')).map(li => {
+      let parts = li.textContent.trim().split(' ');
+      parts.pop();
+      return parts.join(' ');
+    });
 
     // Remove trailing delete from ingredients list
     let ingredientsArray = Array.from(ingredientList.getElementsByTagName('li')).map(li => {
@@ -168,6 +192,27 @@ document.addEventListener('DOMContentLoaded', function () {});
     window.location.href = 'index.html';
   };
 
+  // Close Modal Logic
+const modal = document.getElementById('errorModal');
+const closeModal = document.querySelector('.close');
+const closeButton = document.getElementById('closeModalButton');
+
+// Close modal when clicking the close button
+closeModal.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+closeButton.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+
+// Close modal when clicking outside the modal content
+window.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
   // Store new Recipe to complete recipe array
   let storeLocalStorage = function (formData) {
     const existingDataString = localStorage.getItem('allStoredRecipeDataString');
@@ -178,6 +223,5 @@ document.addEventListener('DOMContentLoaded', function () {});
     const allStoredRecipeDataString = JSON.stringify(existingData);
     localStorage.setItem('allStoredRecipeDataString', allStoredRecipeDataString);
   } 
-
 
   formEl.addEventListener('submit', handleFormSubmit);
