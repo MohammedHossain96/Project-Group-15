@@ -164,19 +164,6 @@ document.addEventListener('DOMContentLoaded', function () {});
       parts.pop();
       return parts.join(' ');
     });
-
-    // Remove trailing delete from ingredients list
-    let ingredientsArray = Array.from(ingredientList.getElementsByTagName('li')).map(li => {
-      let parts = li.textContent.trim().split(' ');
-      parts.pop();
-      return parts.join(' ');
-    });
-    // Remove trailing delete from directions list
-    let directionsArray = Array.from(directionsList.getElementsByTagName('li')).map(li => {
-      let parts = li.textContent.trim().split(' ');
-      parts.pop();
-      return parts.join(' ');
-    });
     const formData = {
       title: document.getElementById('recipe-title').value.trim(),
       servingSize: document.getElementById('recipe-serving').value.trim(),
