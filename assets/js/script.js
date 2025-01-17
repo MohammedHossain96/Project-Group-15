@@ -140,11 +140,27 @@ document.addEventListener('DOMContentLoaded', function () {});
       return;
     }
 
+    // Remove trailing delete from ingredients list
+    let ingredientsArray = Array.from(ingredientList.getElementsByTagName('li')).map(li => {
+      let parts = li.textContent.trim().split(' ');
+      parts.pop();
+      return parts.join(' ');
+    });
+    // Remove trailing delete from directions list
+    let directionsArray = Array.from(directionsList.getElementsByTagName('li')).map(li => {
+      let parts = li.textContent.trim().split(' ');
+      parts.pop();
+      return parts.join(' ');
+    });
     const formData = {
-      ingredients: Array.from(ingredientList.getElementsByTagName('li')).map(li => li.textContent.trim()),
-      directions: Array.from(directionsList.getElementsByTagName('li')).map(li => li.textContent.trim()),
+      title: document.getElementById('recipe-title').value.trim(),
+      servingSize: document.getElementById('recipe-serving').value.trim(),
+      time: document.getElementById('recipe-time').value.trim(),
+      type: document.querySelector('input[name="recipe-type"]')?.value.trim(),
       discription: document.getElementById('discription').value.trim(),
       imageURL: localStorage.getItem('imageURL'),
+      ingredients: ingredientsArray,
+      directions: directionsArray,
     };
 
     storeLocalStorage(formData);

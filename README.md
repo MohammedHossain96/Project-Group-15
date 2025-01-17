@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # <Project-Group-15-My-Recipe-Journal>
 
 ## Description
@@ -18,3 +19,7 @@ Matthew Young
 
 ## License
 Please refer to the LICENSE in the repo.
+=======
+# Project-Group-15
+User story: code .
+>>>>>>> 86487ddfce4265bfe9b28c1847f1105958d0d784
