@@ -3,6 +3,10 @@
 ## Description
 This website is designed for users to easily upload recipes and access them quickly and easily at a later time. 
 
+![Screenshot](assets/images/screenshot.jpg)
+
+ Here is the link: https://mohammedhossain96.github.io/Project-Group-15/submit.html
+
 ## Installation
 N/A
 
