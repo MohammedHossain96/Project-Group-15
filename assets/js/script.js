@@ -131,10 +131,11 @@ document.addEventListener('DOMContentLoaded', function () {});
     // error modal
     const modal = document.getElementById('errorModal');
     const modalMessage = document.getElementById('modalMessage');
+    
 
     if (ingredients === 0 || directions === 0) {
       // Display the modal with an error message
-      modalMessage.textContent = 'Error: Please add at least one ingredient and one direction.';
+      modalMessage.textContent = 'Error: Please add at least one ingredient, one image and one direction.';
       modal.style.display = 'flex'; // Show the modal
       return; // Exit the function to prevent further execution
     }
