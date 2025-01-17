@@ -1,15 +1,98 @@
+/* Contains styles for navigation, form layout, and section styling
+ * Using Materialize
+ */
+/*submit's css*/
+/* Header Section - Top banner and navigation container*/
 .header {
-    background-color: salmon;
+    background-color: #ee6e73;
+    padding: 20px 0;
+    color: white;
 }
 
+/* Navigation Bar - Main menu styling*/
+.nav-wrapper.salmon {
+    background: linear-gradient(45deg, #ff7043, #ff8a65);
+}
 
+/* Recipe Form Container - Main content wrapper*/
 .recipe-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin: 20px auto;
     display: flex;
     justify-content: space-between;
     min-height: 90%;
     flex-direction: column;
-    margin: 5%;
     align-content: center;
+}
+
+/* Recipe Type Selection - First section*/
+#div-1 {
+    background: #fff3e0;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+/* Recipe Description Section - Second section*/
+#div-2 {
+    background: #e8f5e9;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+/* Ingredient List Section - Third section*/
+#div-3 {
+    background: #e3f2fd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+/* Image Upload Section - Fourth section*/
+#div-4 {
+    background: #fff8e1;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+/* Details Dropdown Container - Menu selection*/
+details {
+    background: white;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    margin-top: 10px;
+}
+
+/* Dropdown Summary Element - Clickable header
+Bold weight for checkmeoutbro and pointer cursor for clickonmeplz*/
+summary {
+    color: #ff7043;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Body Background - Page container*/
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.materialize-textarea {
+    border: 1px solid #ddd !important;
+    padding: 10px !important;
+    border-radius: 4px;
+}
+
+.input-field input:focus,
+.materialize-textarea:focus {
+    border-bottom: 1px solid #ff7043 !important;
+    box-shadow: 0 1px 0 0 #ff7043 !important;
 }
 
 /* Recipe Image */
@@ -46,7 +129,6 @@
   .card .card-content {
     height: 80px;
   };
-
 
 /* Classes in Index.html */
 
@@ -94,3 +176,77 @@
     width: 100%;
     margin-top: 1rem;
 }
+/*sumbit's css*/
+/* Button Styling - Form submission and action buttons*/
+ .btn {
+    background-color: #ff7043 !important;
+}
+
+.btn:hover {
+    background-color: #ff8a65 !important;
+}
+
+/* Form Input Focus States - Text fields and textareas
+ * Orange border and shadow on focus
+ * Matches button and theme colors
+ */
+.input-field input:focus,
+.materialize-textarea:focus {
+    border-bottom: 1px solid #ff7043 !important;
+    box-shadow: 0 1px 0 0 #ff7043 !important;
+}
+
+/* Collection List Styling - Ingredient list container
+ * Removes default borders and shadows*/
+.collection {
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Collection Items - Individual list items*/
+.collection-item {
+    border-bottom: 1px solid #eeeeee !important;
+}
+
+/* Headings - Section titles
+ * Orange color matches theme
+ * hierarchy!!!
+ */
+h2, h4 {
+    color: #ff7043;
+}
+
+/* Modal CSS */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #000;
+  }
