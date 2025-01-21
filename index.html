@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" >
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css" >
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" >
     <title>My Recipes</title>
     <style>
       html {
@@ -44,10 +44,11 @@
         <div id="breakfast-section" class="col s12 m6 l3">
           <div class="card">
             <div class="card-image">
-              <img src="./assets/images/breakfast.jpg" alt="Breakfast">
+              <img src="https://images.unsplash.com/photo-1464306208223-e0b4495a5553?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Breakfast">
               <span class="card-title">Breakfast</span>
             </div>
             <div class="card-content">
+              <p id="breakfast-recipes">breakfast recipes.</p>
             </div>
             <div class="card-action">
               <a href="#Breakfast">View Breakfast Recipes</a>
@@ -57,10 +58,11 @@
         <div id="lunch-section" class="col s12 m6 l3">
           <div class="card">
             <div class="card-image">
-              <img src="./assets/images/lunch.jpg" alt="Lunch">
+              <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Lunch">
               <span class="card-title">Lunch</span>
             </div>
             <div class="card-content">
+              <p id="lunch-recipes">lunch recipes.</p>
             </div>
             <div class="card-action">
               <a href="#Lunch">View Lunch Recipes</a>
@@ -70,10 +72,11 @@
         <div id="dinner-section" class="col s12 m6 l3">
           <div class="card">
             <div class="card-image">
-              <img src="./assets/images/dinner.jpg" alt="Dinner">
+              <img src="https://images.unsplash.com/photo-1536392706976-e486e2ba97af?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dinner">
               <span class="card-title">Dinner</span>
             </div>
             <div class="card-content">
+              <p id="dinner-recipes">dinner recipes.</p>
             </div>
             <div class="card-action">
               <a href="#Dinner">View Dinner Recipes</a>
@@ -83,10 +86,11 @@
         <div id="dessert-section" class="col s12 m6 l3">
           <div class="card">
             <div class="card-image">
-              <img src="./assets/images/dessert.jpg" alt="Dessert">
+              <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dessert">
               <span class="card-title">Dessert</span>
             </div>
             <div class="card-content">
+              <p id="dessert-recipes">dessert recipes.</p>
             </div>
             <div class="card-action">
               <a href="#Dessert">View Dessert Recipes</a>
@@ -94,27 +98,27 @@
           </div>
         </div>
       </div>
+      <div id="Breakfast" class="recipe-dropdown" style="display: none;">
+        <div class="breakfast-recipes-container">
+          <!-- Breakfast recipes will be inserted here -->
+        </div>
+      </div>
+      <div id="Lunch" class="recipe-dropdown" style="display: none;">
+        <div class="lunch-recipes-container">
+          <!-- Lunch recipes will be inserted here -->
+        </div>
+      </div>
+      <div id="Dinner" class="recipe-dropdown" style="display: none;">
+        <div class="dinner-recipes-container">
+          <!-- Dinner recipes will be inserted here -->
+        </div>
+      </div>
+      <div id="Dessert" class="recipe-dropdown" style="display: none;">
+        <div class="dessert-recipes-container">
+          <!-- Dessert recipes will be inserted here -->
+        </div>
+      </div>
     <div class="container" id="all-recipes-container">
-    </div>
-    <div id="Breakfast" class="recipe-dropdown" style="display: none;">
-      <div class="breakfast-recipes-container">
-        <!-- Breakfast recipes will be inserted here -->
-      </div>
-    </div>
-    <div id="Lunch" class="recipe-dropdown" style="display: none;">
-      <div class="lunch-recipes-container">
-        <!-- Lunch recipes will be inserted here -->
-      </div>
-    </div>
-    <div id="Dinner" class="recipe-dropdown" style="display: none;">
-      <div class="dinner-recipes-container">
-        <!-- Dinner recipes will be inserted here -->
-      </div>
-    </div>
-    <div id="Dessert" class="recipe-dropdown" style="display: none;">
-      <div class="dessert-recipes-container">
-        <!-- Dessert recipes will be inserted here -->
-      </div>
     </div>
     <script src="./assets/js/indexfile.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
