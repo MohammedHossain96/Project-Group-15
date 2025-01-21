@@ -10,13 +10,25 @@ document.addEventListener('DOMContentLoaded', function () {
     let activeSection = null;
     // Define available recipe categories
     const recipeTypes = ['Breakfast', 'Lunch', 'Dinner', 'Dessert'];
-    
+
+    // Render message if no recipes appear
+    const allRecipes = readLocalStorage();    
+    let noPosts = function () {
+        recipeContainer = document.getElementById('all-recipes-container');
+        let noPostsEl = document.createElement('h3');
+        noPostsEl.textContent = 'No Recipes posted yet...';
+        recipeContainer.appendChild(noPostsEl);
+    }
+    if (allRecipes.length === 0) {
+        noPosts();
+    }    
+
     // Set up click handlers for each recipe type
     recipeTypes.forEach(type => {
         // Get reference to the view link and section container
         const viewLink = document.querySelector(`a[href="#${type}"]`);
         const section = document.querySelector(`#${type}`);
-        
+
         // Add click event listener to handle section display
         viewLink.addEventListener('click', function(e) {
             // Prevent default anchor tag behavior
@@ -50,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const typeRecipes = allRecipes.filter(recipe => recipe.type === type);
             
             // Create and display each matching recipe
+
             typeRecipes.forEach(recipe => {
                 createRecipe(recipe, `.${type.toLowerCase()}-recipes-container`);
             });
@@ -139,29 +152,5 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
-
-    // Render message if no recipes appear
-    let noPosts = function () {
-        recipeContainer = document.getElementById('all-recipes-container');
-        let noPostsEl = document.createElement('h3');
-        noPostsEl.textContent = 'No Recipes posted yet...';
-        recipeContainer.appendChild(noPostsEl);
-    }
-
-    let renderRecipeList = function () {
-        let allRecipes = readLocalStorage();
-        if (allRecipes.length > 0) {
-            for (let i = 0; i < allRecipes.length; i++) {
-                createRecipe(allRecipes[i]);
-            }
-        }
-        else {
-            noPosts();
-        }
-    }
-
-  
 });
-
-
 
